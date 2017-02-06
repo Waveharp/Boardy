@@ -21,6 +21,7 @@ gem "suspenders"
 gem "title"
 gem "uglifier"
 gem "slim"
+gem "slim-rails"
 
 group :development do
   gem "listen"
