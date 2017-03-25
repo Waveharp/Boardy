@@ -7,3 +7,16 @@
 
 @import "base/base";
 @import "refills/flashes";
+
+nav {
+	ul {
+		list-style: none;
+	}
+	li {
+		display: inline-block;
+	}
+	a {
+		font-weight: 800;
+		padding: 10px;
+	}
+}
