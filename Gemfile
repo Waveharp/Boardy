@@ -11,7 +11,7 @@ gem "normalize-rails", "~> 3.0.0"
 gem "pg"
 gem "puma"
 gem "rack-canonical-host"
-gem "rails", "~> 5.0.0"
+gem "rails", "~> 5.0.2"
 gem "recipient_interceptor"
 gem "sass-rails", "~> 5.0"
 gem "simple_form"
@@ -50,6 +50,7 @@ group :development, :staging do
 end
 
 group :test do
+  gem "capybara"
   gem "capybara-webkit"
   gem "database_cleaner"
   gem "formulaic"
