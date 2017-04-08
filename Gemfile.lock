@@ -351,7 +351,6 @@ DEPENDENCIES
   rack-mini-profiler
   rack-timeout
   rails (~> 5.0.2)
-  rb-fsevent
   recipient_interceptor
   refills
   rspec-rails (~> 3.5)

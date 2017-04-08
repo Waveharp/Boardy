@@ -32,7 +32,6 @@ group :development do
   gem "guard"
   gem "guard-livereload"
   gem "rack-livereload"
-  gem "rb-fsevent", :require => false
 end
 
 group :development, :test do
