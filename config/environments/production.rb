@@ -1,6 +1,12 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # Heroku
+  if ENV.fetch("HEROKU_APP_NAME", "").include?("staging-pr-")
+   ENV["APPLICATION_HOST"] = ENV["HEROKU_APP_NAME"] + ".herokuapp.com"
+  end
+  config.middleware.use Rack::CanonicalHost, ENV.fetch("APPLICATION_HOST")
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -28,7 +34,8 @@ Rails.application.configure do
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
-  # config.action_controller.asset_host = 'http://assets.example.com'
+  config.action_controller.asset_host = ENV.fetch("ASSET_HOST", ENV.fetch("APPLICATION_HOST"))
+ +
 
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
@@ -61,6 +68,9 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = SMTP_SETTINGS
+
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
@@ -83,4 +93,11 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.middleware.use Rack::Deflater
+  config.public_file_server.headers = {
+    "Cache-Control" => "public, max-age=31557600",
+  }
+  config.action_mailer.default_url_options = {host: ENV.fetch("APPLICATION_HOST")}
 end
+-Rack::Timeout.timeout = (ENV["RACK_TIMEOUT"] || 10).to_i
