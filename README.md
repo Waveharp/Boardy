@@ -1,4 +1,7 @@
 # Boardy
+## This is not a functional branch!
+Just tinkering around with Users models and controllers as well as rolling my own auth system before I overhaul it and use Devise.
+
 
 Initial setup using Suspenders. 
 
