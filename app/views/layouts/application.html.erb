@@ -15,10 +15,12 @@
 </head>
 <body class="<%= body_class %>">
   <%= render "layouts/header" -%>
+  <hr>
   <%= render "flashes" -%>
   <%= yield %>
   <%= render "javascript" %>
   <%= render "css_overrides" %>
+  <hr>
   <%= render "layouts/footer" -%>
 </body>
 </html>
