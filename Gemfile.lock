@@ -44,6 +44,7 @@ GEM
     autoprefixer-rails (6.7.2)
       execjs
     awesome_print (1.7.0)
+    bcrypt (3.1.11)
     bitters (1.5.0)
       bourbon (~> 5.0.0.beta.7)
       sass (~> 3.4)
@@ -309,6 +310,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   awesome_print
+  bcrypt
   bourbon (~> 5.0.0.beta.7)
   bullet
   bundler-audit (>= 0.5.0)
@@ -361,4 +363,4 @@ RUBY VERSION
    ruby 2.4.0p0
 
 BUNDLED WITH
-   1.14.3
+   1.14.6

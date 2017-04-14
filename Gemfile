@@ -22,6 +22,7 @@ gem "title"
 gem "uglifier"
 gem "slim"
 gem "slim-rails"
+gem "bcrypt"
 
 group :development do
   gem "listen"
