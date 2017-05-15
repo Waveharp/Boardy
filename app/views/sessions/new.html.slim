@@ -3,6 +3,7 @@ h1 Log in
 
 div
 	= form_for(:session, url: login_path) do |f|
+
 		= f.label :email
 		= f.email_field :email
 
