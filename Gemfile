@@ -32,6 +32,7 @@ group :development do
   gem "guard"
   gem "guard-livereload"
   gem "rack-livereload"
+  gem "faker"
 end
 
 group :development, :test do
