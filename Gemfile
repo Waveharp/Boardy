@@ -23,6 +23,7 @@ gem "uglifier"
 gem "slim"
 gem "slim-rails"
 gem "bcrypt"
+gem "will_paginate"
 
 group :development do
   gem "listen"
