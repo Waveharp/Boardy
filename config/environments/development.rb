@@ -26,6 +26,6 @@ Rails.application.configure do
   config.assets.quiet = true
   config.action_view.raise_on_missing_translations = true
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
-  config.action_mailer.default_url_options = { host: "localhost:3000", protocol: "https" }
+  config.action_mailer.default_url_options = { host: "localhost:3000", protocol: "http" }
   config.middleware.insert_after ActionDispatch::Static, Rack::LiveReload
 end
