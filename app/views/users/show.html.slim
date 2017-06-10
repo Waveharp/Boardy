@@ -8,8 +8,9 @@ aside
 			| Email: 
 			= @user.email
 
-= if @user.microposts.any?
-	h3 Microposts (= @user.microposts.count)
-	ol class="microposts"
-		= render @microposts
-	= will_paginate @microposts
+section
+	- if @user.microposts.any?
+		h3 Microposts: #{@user.microposts.count}
+		ol class="microposts"
+			= render @microposts
+		= will_paginate @microposts
