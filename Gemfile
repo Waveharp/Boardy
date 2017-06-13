@@ -24,6 +24,9 @@ gem "slim"
 gem "slim-rails"
 gem "bcrypt"
 gem "will_paginate"
+gem "carrierwave"
+gem "mini_magick"
+gem "fog"
 
 group :development do
   gem "listen"
