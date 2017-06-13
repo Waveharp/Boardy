@@ -1,5 +1,4 @@
-div
-	h2 I'm the home page!
-	- if !logged_in?
-		= link_to "Sign up now!", signup_path
-
+- if logged_in?
+	= render 'shared/home_logged_in'
+- else
+	= render 'shared/home_logged_out'
